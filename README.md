@@ -10,6 +10,10 @@ Remember:
 Write a function `calculateCube` that takes a single number and prints the volume of a cube made from that number.
 
 ```javascript
+function calculateCube(num){
+return(num * num * num)
+}
+
 console.log(calculateCube(5));
 ```
 
@@ -21,6 +25,15 @@ console.log(calculateCube(5));
 Write a function `isAVowel` that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case.
 
 ```javascript
+function isAVowel(l){
+   if ( l == "a" || l == "e" || l == "o" || l =="i" || l == "u"){
+     result = "true"
+   } else {
+     result = "false" 
+   }
+   return result
+  }
+console.log(isAVowel("u"));
 console.log(isAVowel("a"));
 ```
 
@@ -56,7 +69,20 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 Define a function `maxOfThree` that takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned.
 
 ```javascript
+
+function maxOfThree(num1, num2, num3){
+  var max = 0
+  if (num1 < num2 && num3 < num2){
+    max = num2
+  } else if (num3 < num1){
+    max = num1
+  } else {
+    max = num3
+  }
+  return max
+}
 console.log(maxOfThree(6, 9, 1));
+
 ```
 
 > => 9
@@ -68,6 +94,19 @@ console.log(maxOfThree(6, 9, 1));
 Write a function `printLongestWord` that accepts a single argument, an **array of strings**. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
 
 ```javascript
+
+function printLongestWord(arr){
+  var longest = 0
+
+  for (var i =0; i < arr.length; i++){
+    if (arr[i].length >= longest){
+      longest = arr[i].length
+      longest = arr[i]
+    }
+  }
+  return longest
+}
+
 console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "blob"]));
 ```
 
@@ -83,7 +122,11 @@ The transmogrified result of three numbers is the product of the first two numbe
 For example, the transmogrified result of 5, 3, and 2 is `(5 times 3) to the
 power of 2` is 225.
 
-```javascript
+function transmogrify(num1, num2, num3){
+  var num = num1 * num2
+  return Math.pow(num, 2)
+
+}
 console.log(transmogrify(5, 3, 2));
 ```
 
